@@ -27,7 +27,9 @@ function getPlayerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
     return 
-    var move = 1;
+    var move = "Rock" || "Paper" || "Sissors";
+        //this is if both pick the same item.
+    
 }
 
 function getComputerMove(move) {
@@ -35,7 +37,7 @@ function getComputerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
     return 
-    var move = 1;
+    var move = "Rock" || "Paper" || "Sissors";
 }
 
 function getWinner(playerMove,computerMove) {
