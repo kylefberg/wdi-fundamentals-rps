@@ -67,7 +67,7 @@ else if playerMove = "sissors" && computerMove = "rock" {
 else playerMove = "sissors" && cmputerMove = "paper" {
     result "plyaerWins";
 }
-//This is my attempt at the core of the game.
+//This is my attempt at the core of the game. 
     return winner;
 }
 
