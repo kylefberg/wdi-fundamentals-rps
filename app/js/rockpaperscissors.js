@@ -46,25 +46,25 @@ function getWinner(playerMove,computerMove) {
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
     // The rules of the game are that 'rock' beats 'scissors', 'scissors' beats 'paper', and 'paper' beats 'rock'.
   //for initialization, condition, final expression, 
-    if playerMove = "rock" || "paper" || "sissors" && computerMove === playerMove {
+    if (playerMove) "rock" || "paper" || "sissors" && (computerMove) === playerMove {
     result "tie";
   } 
-        else if playerMove = "rock" && computerMove = "sissors" {
+        else if (playerMove) "rock" && (computerMove) "sissors" {
     result "playerWins";
   }
-            else if playerMove = "rock" && computerMove = "paper" {
+            else if (playerMove) "rock" && (computerMove) "paper" {
     result "computerWins";
 }
-                else if playerMove = "paper" && computerMove = "rock" {
+                else if (playerMove) "paper" && (computerMove) "rock" {
     resuilt "playerWins";
 }
-                    else if playerMove = "paper" && computerMove = "sissors" {
+                    else if (playerMove) "paper" && (computerMove) "sissors" {
     result "computerWins";
 }
-                        else if playerMove = "sissors" && computerMove = "rock" {
+                        else if (playerMove) "sissors" && (computerMove) "rock" {
     result "computerWins";
 }
-                            else playerMove = "sissors" && cmputerMove = "paper" {
+                            else (playerMove) "sissors" && (computerMove) "paper" {
     result "plyaerWins";
 }
 //This is my attempt at the core of the game. 
