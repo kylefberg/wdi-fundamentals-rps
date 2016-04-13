@@ -49,22 +49,22 @@ function getWinner(playerMove,computerMove) {
     if playerMove = "rock" || "paper" || "sissors" && computerMove === playerMove {
     result "tie";
   } 
-else if playerMove = "rock" && computerMove = "sissors" {
+        else if playerMove = "rock" && computerMove = "sissors" {
     result "playerWins";
   }
-else if playerMove = "rock" && computerMove = "paper" {
+            else if playerMove = "rock" && computerMove = "paper" {
     result "computerWins";
 }
-else if playerMove = "paper" && computerMove = "rock" {
+                else if playerMove = "paper" && computerMove = "rock" {
     resuilt "playerWins";
 }
-else if playerMove = "paper" && computerMove = "sissors" {
+                    else if playerMove = "paper" && computerMove = "sissors" {
     result "computerWins";
 }
-else if playerMove = "sissors" && computerMove = "rock" {
+                        else if playerMove = "sissors" && computerMove = "rock" {
     result "computerWins";
 }
-else playerMove = "sissors" && cmputerMove = "paper" {
+                            else playerMove = "sissors" && cmputerMove = "paper" {
     result "plyaerWins";
 }
 //This is my attempt at the core of the game. 
