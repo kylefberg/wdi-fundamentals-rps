@@ -58,6 +58,7 @@ function getWinner(playerMove, computerMove) {
     /*Above is setting the rules of who wins. I'm not sure why it was important 
     to list both playerMove and computerMove vs just listing every senerio starting with playerMove. 
     When I didn't it wouldn't post anything or it would run in an endless loop.
+    Also this would not work in repl.it but did work in codecademy so we will see if it works.
     */
 function playToFive() {
     console.log("Let's play rock, paper, scissors");
