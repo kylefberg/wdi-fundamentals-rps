@@ -20,95 +20,75 @@ function randomPlay() {
 ////////////////////////////////////////////////
 /*           Write Your Code Below            */
 ////////////////////////////////////////////////
-var playerMove = ("rock" || "paper" || "sissors");
-var computerMove = ("rock" || "paper" || "sissors");
-
-var getPlayerMove = function (move) 
-{
-    move = getInput("rock", "paper", "sissors");
-    return (move);
-}	
-//this prompts them to pick a move
-    
-    
-var getComputerMove = function (move) 
-{
- 	move = randomPlay("rock", "paper", "sissors");
- 	return (move);
+function getPlayerMove (move) {
+    return move || getInput();
 }
-//This should make the computer pick a random move.
+
+function getComputerMove (move){
+	return move || randomPlay();
+}
+//Above is the  code to get the player and computer to pick moves.
 
 
-
-function getWinner(playerMove,computerMove) 
-{
+function getWinner(playerMove, computerMove) {
     var winner;
-
-    if (playerMove === computerMove) 
-    {
-    console.log; "We Have a Tie";
-  	} 
-        else if (playerMove === "rock" && computerMove === "sissors") 
-        {
-    console.log; "Rock Wins";
-  		}
-            else if (playerMove === "rock" && computerMove === "paper") 
-            {
-    console.log; "Paper Wins";
-			}
-                else if (playerMove === "paper" && computerMove === "rock") 
-                {
-    console.log; "Paper Wins";
-				}
-                    else if (playerMove === "paper" && computerMove === "sissors") 
-                    {
-    console.log; "Sissors Wins";
-					}
-                        else if (playerMove === "sissors" && computerMove === "rock") 
-                        {
-    console.log; "Rock Wins";
-						}
-                            else if (playerMove === "sissors" && computerMove === "paper") 
-                            {
-    console.log; "Sissors Wins";
-                            }
-                            	else {
-                            		return "null";
-                            		}
-		
-}    
-
+    if (playerMove === computerMove) {
+       winner = "tie";
+    } else if (playerMove === "rock" && computerMove === "scissors") {
+       winner = "player";
+    } else if (playerMove == "rock" && computerMove == "paper") {
+       winner = "computer";
+    } else if (playerMove == "paper" && computerMove == "scissors") {
+        winner = "computer";
+    } else if (playerMove == "scissors" && computerMove == "paper") {
+        winner = "player";
+    } else if (computerMove == "rock" && playerMove == "scissors") {
+        winner = "computer";
+    } else if (computerMove == "rock" && playerMove == "paper") {
+        winner = "player";
+    } else if (computerMove == "paper" && playerMove == "rock") {
+        winner = "computer";
+    } else if (computerMove == "paper" && playerMove == "scissors") {
+        winner = "player";
+    } else if (computerMove == "scissors" && playerMove == "paper") {
+        winner = "computer";
+    }
+    return winner;
+}
+    /*Above is setting the rules of who wins. I'm not sure why it was important 
+    to list both playerMove and computerMove vs just listing every senerio starting with playerMove. 
+    When I didn't it wouldn't post anything or it would run in an endless loop.
+    */
 function playToFive() {
-    console.log("Let's play Rock, Paper, Scissors");
+    console.log("Let's play rock, paper, scissors");
     var playerWins = 0;
     var computerWins = 0;
-
-    
     while (playerWins < 5 && computerWins < 5) {
         var playerMove = getPlayerMove();
         var computerMove = getComputerMove();
-        var result = 1;
-        var counter = 0;
-        while (counter <5) {
-        	result = result +1;
-        	counter = counter +1;
+        var winner = getWinner(playerMove,computerMove);
+        if (winner == "computer") {
+            console.log("Player choose:" + playerMove);
+            console.log("Computer choose: " + computerMove);
+            console.log("Compter wins this rounds.");
+            computerWins++;
+            console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+        } else if (winner == "player") {
+            console.log("Player choose:" + playerMove);
+            console.log("Computer choose: " + computerMove);
+            console.log("Player wins this rounds.");
+            playerWins++;
+            console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
+        } else if (winner== "tie") {
+            console.log("Player choose:" + playerMove);
+            console.log("Computer choose: " + computerMove);
+            console.log("This round is a tie.");
         }
-        //This is my attempt to make the count move up to 5 to declare a winner.
-        //It's not working
-        var winner = getWinner(playerMove, computerMove);
-        if (winner === "player") {
-            console.log("Player Wins" + "\n", "Player" + playerMove + " while Computer chose " + computerMove);
-            playerWins += 1;
-            console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
-            
-        } else if (winner === "computer"); {
-            console.log("Computer Wins" + "\n", "Player chose " + playerMove + " while Computer chose " + computerMove);
-            computerWins += 1;
-            console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
-        
-    			 }
-        return [playerWins, computerWins];
-        
     }
+    if (playerWins == 5) {
+        return "Player score: " + playerWins + ". Computer score: " + computerWins + ". Player win the game.";
+    } else if (computerWins == 5) {
+        return "Player score: " + playerWins + ". Computer score: " + computerWins + ". Computer win the game.";
+    }    
 }
 playToFive();
